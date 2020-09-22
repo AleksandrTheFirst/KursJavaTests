@@ -2,9 +2,6 @@ public class Program {
 
     public static void main(String[] args) {
 
-
-
-
     Point pointA = new Point(3, -4);
     Point pointB = new Point(8, 7);
     System.out.println("Расстояние между точкой A и точкой B равно " + distance(pointA, pointB));
