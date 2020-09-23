@@ -1,3 +1,5 @@
+package ru.sandbox;
+
 public class Point {
     double x;
     double y;
