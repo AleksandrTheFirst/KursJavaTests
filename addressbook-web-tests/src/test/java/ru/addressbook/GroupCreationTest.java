@@ -36,13 +36,14 @@ public class GroupCreationTest {
     }
 
     @Test
-    public void createGroup() throws Exception{
+    public void createGroup() {
         goToGroupPage();
         initGroupCreation();
         fillGroupForm(new GroupData("test1", "test2", "test3"));
         submitGroupCreation();
         returnToGroupPage();
     }
+
 
     private void logOut() {
         wd.findElement(By.linkText("Logout")).click();
