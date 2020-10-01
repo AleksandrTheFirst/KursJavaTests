@@ -1,11 +1,9 @@
 package ru.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -35,26 +33,6 @@ public class ApplicationManager {
 
     public void logOut() {
         wd.findElement(By.linkText("Logout")).click();
-    }
-
-    public boolean isElementPresent(By by) {
-        try {
-            wd.findElement(by);
-            return true;
-        }
-        catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    public boolean isAlertPresent() {
-        try {
-            wd.switchTo().alert();
-            return true;
-        }
-        catch (NoAlertPresentException e) {
-            return false;
-        }
     }
 
     public GroupHelper getGroupHelper() {
