@@ -29,7 +29,6 @@ public class ApplicationManager {
 
 
     public void stop() {
-        logOut();
         wd.quit();
     }
 
