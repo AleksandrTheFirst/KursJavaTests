@@ -27,5 +27,6 @@ public class ContactCreationTests extends TestBase {
                 "Moscow, Kremlin",
                 "+79995556644"));
         app.getContactHelper().submitContactCreation();
+        app.getContactHelper().returnToContactsPage();
     }
 }

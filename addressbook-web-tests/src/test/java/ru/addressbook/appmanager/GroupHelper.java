@@ -62,4 +62,10 @@ public class GroupHelper extends HelperBase{
         submitGroupCreation();
         returnToGroupPage();
     }
+
+    public void deleteSelectedGroup() {
+        selectGroup();
+        deleteSelectedGroups();
+        returnToGroupPage();
+    }
 }

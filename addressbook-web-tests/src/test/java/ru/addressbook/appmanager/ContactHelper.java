@@ -28,6 +28,10 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
+    public void returnToContactsPage() {
+        click(By.linkText("home"));
+    }
+
     public void initContactModification() {
         click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a"));
     }
@@ -46,5 +50,29 @@ public class ContactHelper extends HelperBase {
 
     public void acceptContactDeletion() {
         wd.switchTo().alert().accept();
+    }
+
+    public void modifyContact(ContactData contact) {
+        initContactModification();
+        fillContactForm(contact);
+        submitContactModification();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void createContact(ContactData contact) {
+        initContactCreation();
+        fillContactForm(contact);
+        submitContactCreation();
+        returnToContactsPage();
+    }
+
+    public void deleteSelectedContact() {
+        selectContact();
+        deleteContact();
+        acceptContactDeletion();
+        returnToContactsPage();
     }
 }
