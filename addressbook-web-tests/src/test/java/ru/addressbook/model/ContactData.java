@@ -10,6 +10,7 @@ public class ContactData {
     private final String companyName;
     private final String address;
     private final String mobilePhone;
+    private int id;
 
     public ContactData(String firstName, String middleName, String lastName, String nickName, String companyName, String address, String mobilePhone) {
         this.firstName = firstName;
@@ -19,6 +20,7 @@ public class ContactData {
         this.companyName = companyName;
         this.address = address;
         this.mobilePhone = mobilePhone;
+        this.id = Integer.MAX_VALUE;
     }
 
     @Override
@@ -33,6 +35,17 @@ public class ContactData {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName);
+    }
+
+    public ContactData(String firstName, String middleName, String lastName, String nickName, String companyName, String address, String mobilePhone, int id) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.nickName = nickName;
+        this.companyName = companyName;
+        this.address = address;
+        this.mobilePhone = mobilePhone;
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -51,6 +64,15 @@ public class ContactData {
         return nickName;
     }
 
+    @Override
+    public String toString() {
+        return "ContactData{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", id=" + id +
+                '}';
+    }
+
     public String getCompanyName() {
         return companyName;
     }
@@ -63,5 +85,5 @@ public class ContactData {
         return mobilePhone;
     }
 
-
+    public int getId() { return id; }
 }
