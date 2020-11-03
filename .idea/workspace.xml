@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="085a6b39-97a8-4a8a-8f7a-59e9ab162b44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,6 +15,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/addressbook-web-tests">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/sandbox">
       <ProjectState />
     </projectState>
@@ -68,10 +73,11 @@
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sandbox/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/addressbook-web-tests/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -81,11 +87,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Programm" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,10 +112,10 @@
       <screen x="3840" y="0" width="1920" height="1040" />
     </state>
     <state x="4618" y="290" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1600778551641" />
-    <state x="2660" y="229" key="FileChooserDialogImpl" timestamp="1600602279955">
+    <state x="2660" y="229" key="FileChooserDialogImpl" timestamp="1602682078583">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="229" key="FileChooserDialogImpl/0.0.1920.1040/3840.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600602279955" />
+    <state x="2660" y="229" key="FileChooserDialogImpl/0.0.1920.1040/3840.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602682078583" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1600782935156">
       <screen x="3840" y="0" width="1920" height="1040" />
     </state>
@@ -131,13 +132,13 @@
       <screen x="3840" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1600782935156" />
-    <state x="2360" y="94" key="SettingsEditor" timestamp="1600602284621">
+    <state x="2360" y="94" key="SettingsEditor" timestamp="1602682082975">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2360" y="94" key="SettingsEditor/0.0.1920.1040/3840.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600602284621" />
-    <state x="2471" y="203" key="new project wizard" timestamp="1600602266299">
+    <state x="2360" y="94" key="SettingsEditor/0.0.1920.1040/3840.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602682082975" />
+    <state x="2471" y="203" key="new project wizard" timestamp="1602681993946">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2471" y="203" key="new project wizard/0.0.1920.1040/3840.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600602266299" />
+    <state x="2471" y="203" key="new project wizard/0.0.1920.1040/3840.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602681993946" />
   </component>
 </project>

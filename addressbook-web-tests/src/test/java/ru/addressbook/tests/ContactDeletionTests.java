@@ -18,6 +18,7 @@ public class ContactDeletionTests extends TestBase {
                     "Moscow, Kremlin",
                     "+79995556644"));
         }
+
         app.getContactHelper().deleteSelectedContact();
     }
 

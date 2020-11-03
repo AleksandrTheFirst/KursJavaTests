@@ -2,7 +2,11 @@ package ru.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import ru.addressbook.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GroupHelper extends HelperBase{
 
@@ -11,7 +15,7 @@ public class GroupHelper extends HelperBase{
     }
 
     public void returnToGroupPage() {
-        click(By.linkText("group page"));
+        click(By.linkText("groups"));
     }
 
     public void submitGroupCreation() {
@@ -32,8 +36,8 @@ public class GroupHelper extends HelperBase{
         click(By.name("delete"));
     }
 
-    public void selectGroup() {
-        click(By.name("selected[]"));
+    public void selectGroup(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 
     public void initGroupModification() {
@@ -44,13 +48,6 @@ public class GroupHelper extends HelperBase{
         click(By.name("update"));
     }
 
-    public void modifyGroup() {
-        selectGroup();
-        initGroupModification();
-        fillGroupForm(new GroupData("test1111", null, null));
-        submitGroupModification();
-        returnToGroupPage();
-    }
 
     public boolean isThereAGroup() {
         return isElementPresent(By.name("selected[]"));
@@ -64,8 +61,19 @@ public class GroupHelper extends HelperBase{
     }
 
     public void deleteSelectedGroup() {
-        selectGroup();
         deleteSelectedGroups();
         returnToGroupPage();
+    }
+
+    public List<GroupData> getGroupList() {
+        List<GroupData> groups = new ArrayList<>();
+        List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
+        for (WebElement element : elements) {
+            String name = element.getText();
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            GroupData group = new GroupData(name, id, null, null);
+            groups.add(group);
+        }
+        return groups;
     }
 }
