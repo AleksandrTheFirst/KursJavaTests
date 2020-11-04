@@ -3,7 +3,6 @@ package ru.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.addressbook.model.ContactData;
-import ru.addressbook.model.GroupData;
 
 import java.util.Comparator;
 import java.util.List;
@@ -14,7 +13,7 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void createContact() {
-        app.getNavigationHelper().goToContactsPage();
+        app.goTo().goToContactsPage();
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initContactCreation();
         ContactData contact = new ContactData(

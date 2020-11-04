@@ -3,7 +3,6 @@ package ru.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.addressbook.model.ContactData;
-import ru.addressbook.model.GroupData;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ public class ContactDeletionTests extends TestBase {
 
     @Test
     public void contactDeletion() {
-        app.getNavigationHelper().goToContactsPage();
+        app.goTo().goToContactsPage();
         List<ContactData> before = app.getContactHelper().getContactList();
         if (! app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData(
