@@ -37,8 +37,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
-    public void initContactModification() {
-        click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a"));
+    public void initContactModification(int index) {
+        click(By.xpath("//a[@href='edit.php?id=" + index + "'" + "]"));
     }
 
     public void submitContactModification() {
@@ -57,8 +57,8 @@ public class ContactHelper extends HelperBase {
         wd.switchTo().alert().accept();
     }
 
-    public void modifyContact(ContactData contact) {
-        initContactModification();
+    public void modifyContact(int index, ContactData contact) {
+        initContactModification(index);
         fillContactForm(contact);
         submitContactModification();
     }

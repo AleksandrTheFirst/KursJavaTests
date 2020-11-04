@@ -24,6 +24,7 @@ public class ContactModificationTests extends TestBase {
                 app.getContactHelper().createContact(contact);
             }
         List<ContactData> before = app.getContactHelper().getContactList();
+        int index = before.get(before.size() - 1).getId();
         ContactData contact = new ContactData(
                 "Sergey",
                 null,
@@ -32,9 +33,9 @@ public class ContactModificationTests extends TestBase {
                 null,
                 null,
                 null,
-                before.get(before.size() - 1).getId()
+                index
         );
-        app.getContactHelper().modifyContact(contact);
+        app.getContactHelper().modifyContact(index, contact);
         app.getContactHelper().returnToContactsPage();
         List<ContactData> after = app.getContactHelper().getContactList();
         Assert.assertEquals(before.size(), after.size());
