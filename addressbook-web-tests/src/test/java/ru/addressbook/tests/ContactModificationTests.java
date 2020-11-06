@@ -1,17 +1,14 @@
 package ru.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.addressbook.model.ContactData;
 import ru.addressbook.model.Contacts;
 
-import java.util.Set;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 public class ContactModificationTests extends TestBase {
 
@@ -41,7 +38,7 @@ public class ContactModificationTests extends TestBase {
                 .withId(modifiedContact.getId());
         app.contact().modify(contact);
         Contacts after = app.contact().all();
-        Assert.assertEquals(before.size(), after.size());
+        assertThat(before.size(), equalTo(after.size()));
 
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
     }
