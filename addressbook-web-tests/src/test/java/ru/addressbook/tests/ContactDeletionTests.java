@@ -13,14 +13,14 @@ public class ContactDeletionTests extends TestBase {
     public void ensurePreconditions() {
         app.goTo().contactsPage();
         if (app.contact().list().size() == 0) {
-            ContactData contact = new ContactData(
-                    "Igor",
-                    "Sergeevich",
-                    "Alekseev",
-                    "ASA",
-                    "Zebra Ltd.",
-                    "Moscow, Kremlin",
-                    "+79995556644");
+            ContactData contact = new ContactData()
+                    .withFirstName("Igor")
+                    .withMiddleName("Sergeevich")
+                    .withLastName("Alekseev")
+                    .withCompanyName("Zebra Ltd.")
+                    .withNickName("ASA")
+                    .withAddress("Moscow, Kremlin")
+                    .withMobilePhone("+79995556644");
             app.contact().create(contact);
         }
     }
@@ -29,7 +29,7 @@ public class ContactDeletionTests extends TestBase {
     public void contactDeletion() {
         List<ContactData> before = app.contact().list();
         int index = before.size() - 1;
-        app.contact().delete();
+        app.contact().delete(before.get(index));
         List<ContactData> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size() - 1);
 

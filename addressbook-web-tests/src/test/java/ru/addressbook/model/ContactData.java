@@ -3,35 +3,53 @@ package ru.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-    private final String firstName;
-    private final String middleName;
-    private final String lastName;
-    private final String nickName;
-    private final String companyName;
-    private final String address;
-    private final String mobilePhone;
-    private int id;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String nickName;
+    private String companyName;
+    private String address;
+    private String mobilePhone;
+    private int id = Integer.MAX_VALUE;;
 
-    public ContactData(String firstName, String middleName, String lastName, String nickName, String companyName, String address, String mobilePhone) {
+    public ContactData withFirstName(String firstName) {
         this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.nickName = nickName;
-        this.companyName = companyName;
-        this.address = address;
-        this.mobilePhone = mobilePhone;
-        this.id = Integer.MAX_VALUE;
+        return this;
     }
 
-    public ContactData(String firstName, String middleName, String lastName, String nickName, String companyName, String address, String mobilePhone, int id) {
-        this.firstName = firstName;
+    public ContactData withMiddleName(String middleName) {
         this.middleName = middleName;
+        return this;
+    }
+
+    public ContactData withLastName(String lastName) {
         this.lastName = lastName;
+        return this;
+    }
+
+    public ContactData withNickName(String nickName) {
         this.nickName = nickName;
+        return this;
+    }
+
+    public ContactData withCompanyName(String companyName) {
         this.companyName = companyName;
+        return this;
+    }
+
+    public ContactData withAddress(String address) {
         this.address = address;
+        return this;
+    }
+
+    public ContactData withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    public ContactData withId(int id) {
         this.id = id;
+        return this;
     }
 
     @Override

@@ -44,8 +44,8 @@ public class ContactHelper extends HelperBase {
         click(By.name("update"));
     }
 
-    public void selectContact() {
-        click(By.name("selected[]"));
+    public void selectContact(int id) {
+        click(By.id(Integer.toString(id)));
     }
 
     public void deleteContact() {
@@ -70,8 +70,8 @@ public class ContactHelper extends HelperBase {
         returnToContactsPage();
     }
 
-    public void delete() {
-        selectContact();
+    public void delete(ContactData contact) {
+        selectContact(contact.getId());
         deleteContact();
         acceptContactDeletion();
         returnToContactsPage();
@@ -84,14 +84,7 @@ public class ContactHelper extends HelperBase {
             String name = element.findElement(By.xpath(".//td[3]")).getText();
             String lastName = element.findElement(By.xpath(".//td[2]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            ContactData contact = new ContactData( name,
-                    null,
-                    lastName,
-                    null,
-                    null,
-                    null,
-                    null, id);
-            contacts.add(contact);
+            contacts.add(new ContactData().withFirstName(name).withLastName(lastName).withId(id));
         }
 
         return contacts;
