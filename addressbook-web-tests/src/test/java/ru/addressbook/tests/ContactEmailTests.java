@@ -41,11 +41,7 @@ public class ContactEmailTests extends TestBase {
     private String mergeEmails(ContactData contact) {
         return Arrays.asList(contact.getEmail(), contact.getEmail2(), contact.getEmail3())
                 .stream().filter((s) -> ! s.equals(""))
-                .map(ContactEmailTests::cleanEmails)
                 .collect(Collectors.joining("\n"));
     }
 
-    public static String cleanEmails(String email) {
-        return email.replaceAll("[@.]", "");
-    }
 }
