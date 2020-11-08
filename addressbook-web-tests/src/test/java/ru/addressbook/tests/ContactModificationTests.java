@@ -1,6 +1,5 @@
 package ru.addressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.addressbook.model.ContactData;
@@ -8,7 +7,6 @@ import ru.addressbook.model.Contacts;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.Assert.assertEquals;
 
 public class ContactModificationTests extends TestBase {
 
@@ -37,8 +35,8 @@ public class ContactModificationTests extends TestBase {
                 .withLastName("Alekseev")
                 .withId(modifiedContact.getId());
         app.contact().modify(contact);
+        assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.contact().all();
-        assertThat(before.size(), equalTo(after.size()));
 
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
     }
