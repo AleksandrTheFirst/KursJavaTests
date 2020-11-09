@@ -1,10 +1,15 @@
 package ru.addressbook.model;
 
+import com.google.gson.annotations.Expose;
+
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
+    @Expose
     private String firstName;
     private String middleName;
+    @Expose
     private String lastName;
     private String nickName;
     private String companyName;
@@ -17,7 +22,13 @@ public class ContactData {
     private String email;
     private String email2;
     private String email3;
-    private int id = Integer.MAX_VALUE;;
+    private int id = Integer.MAX_VALUE;
+    private File photo;
+
+    public ContactData withPhoto(File photo) {
+        this.photo = photo;
+        return this;
+    }
 
     public ContactData withFirstName(String firstName) {
         this.firstName = firstName;
@@ -174,6 +185,10 @@ public class ContactData {
 
     public String getEmail3() {
         return email3;
+    }
+
+    public File getPhoto() {
+        return photo;
     }
 
 }

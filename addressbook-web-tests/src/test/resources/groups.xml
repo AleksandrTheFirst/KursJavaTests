@@ -1,0 +1,17 @@
+<list>
+  <ru.addressbook.model.GroupData>
+    <name>TestName 0</name>
+    <header>TestHeader 0</header>
+    <footer>TestFooter 0</footer>
+  </ru.addressbook.model.GroupData>
+  <ru.addressbook.model.GroupData>
+    <name>TestName 1</name>
+    <header>TestHeader 1</header>
+    <footer>TestFooter 1</footer>
+  </ru.addressbook.model.GroupData>
+  <ru.addressbook.model.GroupData>
+    <name>TestName 2</name>
+    <header>TestHeader 2</header>
+    <footer>TestFooter 2</footer>
+  </ru.addressbook.model.GroupData>
+</list>
