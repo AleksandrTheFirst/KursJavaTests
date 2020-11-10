@@ -6,7 +6,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.addressbook.model.ContactData;
 import ru.addressbook.model.Contacts;
-import ru.addressbook.model.GroupData;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,16 +23,17 @@ public class ContactCreationTests extends TestBase {
 
     @DataProvider
     public Iterator<Object[]> validContactsFromJson() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.json")));
-        String json = "";
-        String line = reader.readLine();
-        while (line !=null){
-            json += line;
-            line = reader.readLine();
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.json")))){
+            String json = "";
+            String line = reader.readLine();
+            while (line !=null){
+                json += line;
+                line = reader.readLine();
+            }
+            Gson gson = new Gson();
+            List<ContactData> group = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());
+            return group.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
         }
-        Gson gson = new Gson();
-        List<ContactData> group = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());
-        return group.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
     }
 
 
