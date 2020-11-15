@@ -2,6 +2,7 @@ package ru.addressbook.model;
 
 import com.google.common.collect.ForwardingSet;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,11 +11,15 @@ public class Contacts extends ForwardingSet<ContactData> {
     private Set <ContactData> delegate;
 
     public Contacts(Contacts contact) {
-        this.delegate = new HashSet<ContactData>(contact.delegate);
+        this.delegate = new HashSet<>(contact.delegate);
     }
 
     public Contacts() {
         this.delegate = new HashSet<>();
+    }
+
+    public Contacts(Collection<ContactData> contacts) {
+        this.delegate = new HashSet<ContactData>(contacts);
     }
 
     @Override

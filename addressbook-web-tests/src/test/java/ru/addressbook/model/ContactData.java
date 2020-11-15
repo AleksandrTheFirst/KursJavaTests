@@ -1,32 +1,59 @@
 package ru.addressbook.model;
 
 import com.google.gson.annotations.Expose;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
     @Expose
+    @Column(name = "firstName")
     private String firstName;
     private String middleName;
     @Expose
+    @Column(name = "lastName")
     private String lastName;
     private String nickName;
-    private String companyName;
+
+    @Type(type = "text")
     private String address;
+
+
+    @Column(name = "mobile")
+    @Type(type = "text")
     private String mobilePhone;
+    @Column(name = "home")
+    @Type(type = "text")
     private String homePhone;
+    @Column(name = "work")
+    @Type(type = "text")
     private String workPhone;
+    @Transient
     private String allPhones;
+    @Transient
     private String allEmails;
+
+    @Type(type = "text")
     private String email;
+    @Type(type = "text")
     private String email2;
+    @Type(type = "text")
     private String email3;
+
+    @Id
+    @Column(name = "id")
     private int id = Integer.MAX_VALUE;
-    private File photo;
+
+    @Column(name = "photo")
+    @Type(type = "text")
+    private String photo;
 
     public ContactData withPhoto(File photo) {
-        this.photo = photo;
+        this.photo = photo.getPath();
         return this;
     }
 
@@ -47,11 +74,6 @@ public class ContactData {
 
     public ContactData withNickName(String nickName) {
         this.nickName = nickName;
-        return this;
-    }
-
-    public ContactData withCompanyName(String companyName) {
-        this.companyName = companyName;
         return this;
     }
 
@@ -145,10 +167,6 @@ public class ContactData {
                 '}';
     }
 
-    public String getCompanyName() {
-        return companyName;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -188,7 +206,12 @@ public class ContactData {
     }
 
     public File getPhoto() {
-        return photo;
+        if (photo != null) {
+            return new File(photo);
+        }
+        else {
+            return null;
+        }
     }
 
 }
